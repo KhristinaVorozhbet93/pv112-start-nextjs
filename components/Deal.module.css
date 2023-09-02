@@ -1,0 +1,11 @@
+.inline {
+    display: flex;
+    padding: 5px;
+    position: relative;
+}
+
+.inline button {
+    position: absolute;
+    right: 0;
+    background-color: red;
+}

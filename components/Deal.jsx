@@ -1,9 +1,10 @@
+import styles from './Deal.module.css'
 
 export function Deal({deal, deleteDeal}){
    return <>
-      <div className = 'inline'>
+      <div className = {styles.inline}>
         <div>{deal}</div>
-        <button onClick = {() =>deleteDeal()}>X</button> 
+        <button  onClick = {() =>deleteDeal()}>X</button> 
       </div>
      </>
 }
