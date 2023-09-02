@@ -1,5 +1,6 @@
 import { Deal } from "./Deal";
 import React from "react";
+import styles from './ToDoList.module.css'
 
 const list = ['Feed the cat','Clearn the house','Do homework', 'Walk the dog'];
 
@@ -13,18 +14,18 @@ export function ToDoList(){
     setList([...listOfDeal])
   }  
   return <>
-  <div className='container'>        
-        <h1>Todo list</h1>
-          <div className='text'>
-            <input className='inp' value = {text}
+  <div className={styles.container}>        
+        <h1 className={styles.head}>Todo list</h1>
+          <div className={styles.text}>
+            <input className={styles.inp} value = {text}
             onInput = {evt => setText(evt.target.value)}/>     
-            <button className = 'btn'  
+            <button className = {styles.btn}  
              onClick = {() => {setList([...listOfDeal, text]), setText('')}}>Add</button>
           </div>
-          <div className = 'list'>   
+          <div className = {styles.list}>   
             <ol>           
             { 
-            listOfDeal.map((element,index) => <li key = {index}><Deal deal = {element}                   deleteDeal={() => delDeal(index)}/></li>)}
+            listOfDeal.map((element,index) => <li className={styles.elem} key = {index}><Deal deal = {element}                   deleteDeal={() => delDeal(index)}/></li>)}
             </ol>  
           </div> 
   </div>
