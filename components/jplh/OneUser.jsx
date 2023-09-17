@@ -1,20 +1,19 @@
-export default function OneUser({ user }) {
-    let {
-        name,
-        email,
-        address: { street, suite, city },
-        phone
-    } = user;
+import { memo } from "react";
+
+export default memo (function OneUser({ user, delUser }) {
     return (
         <>
             <tr>
-                <td>{name}</td>
-                <td>{email}</td>
-                <td>{street}</td>
-                <td>{suite}</td>
-                <td>{city}</td>
-                <td>{phone}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.street}</td>
+                <td>{user.suite}</td>
+                <td>{user.city}</td>
+                <td>{user.phone}</td>
+                <td>
+                    <button onClick={() => delUser(user.id)}>Удалить</button>
+                </td>
             </tr>
         </>
     );
-}
+});
