@@ -1,23 +1,28 @@
 import React, { memo, useState } from "react";
+import styles from "./Form.module.css";
 
 export default memo (function Form({addUser}) {
-   const [formData, setFormData] = useState({
-     name: "",
-     email: "",
-     address: {
-       street: "",
-       suite: "",
-       city: "",
-     },
-     phone: "",
-   }),
-      formSubmit = (e) => {
-      e.preventDefault();
-      addUser(formData);
-    }
+    const [formData, setFormData] = useState({
+        id: "",
+        name: "",
+        email: "",
+        address: {
+            street: "",
+            suite: "",
+            city: "",
+        },
+        phone: "",
+    }),
+        formSubmit = (e) => {
+            e.preventDefault();
+            addUser(formData);
+        }
 
     return (
-      <form onSubmit={formSubmit}>
+      <form onSubmit={formSubmit} className= {styles.form}>    
+       <div>
+              <input type="text" placeholder="Id" onInput={(e) => setFormData({...formData, id: e.target.value})}/>
+          </div>
           <div>
               <input type="text" placeholder="Name" onInput={(e) => setFormData({...formData, name: e.target.value})}/>
           </div>
