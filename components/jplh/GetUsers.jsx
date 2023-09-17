@@ -30,6 +30,7 @@ export default memo (function GetUsers() {
         <table>
             <tbody>
                 <tr>
+                    <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Street</th>
@@ -38,10 +39,10 @@ export default memo (function GetUsers() {
                     <th>Phone</th>
                 </tr>
                 {users.map((user) => (
-                  <OneUser
-                    key={user.id}
-                    user={user}
-                    delUser={delUser}
+                    <OneUser
+                        key={user.id}
+                        user={user}
+                        delUser={delUser}
                     addUser={addUser}
                   />
                   ))

@@ -1,4 +1,5 @@
 import { memo } from "react";
+import styles from "./OneUser.module.css"; 
 
 export default memo (function OneUser({ user, delUser }) {
     let {
@@ -15,7 +16,7 @@ export default memo (function OneUser({ user, delUser }) {
     } = user; 
     return (
         <>
-            <tr>
+            <tr className={styles.card}>
                 <td>{id}</td>
                 <td>{name}</td>
                 <td>{email}</td>
